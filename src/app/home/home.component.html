@@ -1,0 +1,22 @@
+
+  <div class="container dark">
+    <div class="col">
+      <p>¿Tienes algo nuevo por hacer? Añadelo!</p>
+    </div>
+    <div class="col">
+      <p>Esta es tu lista de cosas por hacer. Tienes {{counter}} tareas pendientes.</p>
+    </div>
+  </div>
+  <div class="container light" [@cosas]="cosas.length">
+    <div class="col">
+      <p class="sm">Ingresa un dato:</p>
+      <form class="">
+        <input type="text" name="item" class="txt" placeholder="To-do" [(ngModel)]="todo">
+        <input type="submit" class="btn" [value]="texto" (click)="agregar()">
+      </form>
+    </div>
+    <div class="col">
+      <p class="life-container" *ngFor="let cosa of cosas; let i = index" (click)="eliminarItm(i)">{{cosa}}</p>
+      <p class="life-container">{{todo}}</p>
+    </div>
+  </div>
